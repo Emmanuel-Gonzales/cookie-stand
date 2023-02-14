@@ -13,7 +13,7 @@ let Seattle = {
   total: 0,
   cookiesSale: [],
   generateCookies: function () {
-    this.cookiesSale = randomSale(23, 65);
+    this.cookiesSale = Math.floor(randomSale(23, 65) * this.avgCookieSale);
   },
   render: function () {
     let body = document.querySelector('body');
@@ -53,7 +53,7 @@ let Tokyo = {
   total: 0,
   cookiesSale: [],
   generateCookies: function () {
-    this.cookiesSale = randomSale(3, 24);
+    this.cookiesSale = Math.floor(randomSale(3, 24) * this.avgCookieSale);
   },
   render: function () {
     let body = document.querySelector('body');
@@ -93,7 +93,7 @@ let Dubai = {
   total: 0,
   cookiesSale: [],
   generateCookies: function () {
-    this.cookiesSale = randomSale(11, 38);
+    this.cookiesSale = Math.floor(randomSale(11, 38) * this.avgCookieSale);
   },
   render: function () {
     let body = document.querySelector('body');
@@ -132,7 +132,7 @@ let Paris = {
   total: 0,
   cookiesSale: [],
   generateCookies: function () {
-    this.cookiesSale = randomSale(20, 38);
+    this.cookiesSale = Math.floor(randomSale(20, 38) * this.avgCookieSale);
   },
   render: function () {
     let body = document.querySelector('body');
@@ -171,7 +171,7 @@ let Lima = {
   total: 0,
   cookiesSale: [],
   generateCookies: function () {
-    this.cookiesSale = randomSale(2, 16);
+    this.cookiesSale = Math.floor(randomSale(2, 16) * this.avgCookieSale);
   },
   render: function () {
     let body = document.querySelector('body');
