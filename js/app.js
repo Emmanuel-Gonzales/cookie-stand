@@ -60,6 +60,7 @@ let Tokyo = {
 
     let articleElem = document.createElement('article');
     body.appendChild(articleElem);
+    articleElem.id = ('Tokyo');
 
     let h2Elem = document.createElement('h2');
     h2Elem.textContent = (this.name);
