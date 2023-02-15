@@ -5,7 +5,7 @@ function randomSale(min, max) {
 }
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let allLocations = [];
-let body = document.querySelector('table');
+let table = document.querySelector('table');
 
 
 
@@ -21,7 +21,7 @@ function LocatSales (name, maxCust, minCust, avgCookieSale){
 function firstLine(){
   let timeElem = document.createElement('tr');
   timeElem.textContent = 'Time:';
-  body.appendChild(timeElem);
+  table.appendChild(timeElem);
 
   for (let i = 0; i < hours.length; i++){
     let time = document.createElement('td');
@@ -33,14 +33,15 @@ function firstLine(){
   totalElem.textContent = 'Daily Location Total';
   timeElem.appendChild(totalElem);
 }
+
 LocatSales.prototype.generateCookies = function(){
-  this.cookiesSale = Math.floor(randomSale(23, 65) * this.avgCookieSale);
+  this.cookiesSale = Math.floor(randomSale(this.minCust, this.maxCust) * this.avgCookieSale);
 };
 
 LocatSales.prototype.render = function () {
 
   let articleElem = document.createElement('tr');
-  body.appendChild(articleElem);
+  table.appendChild(articleElem);
 
   let ulElem = document.createElement('th');
   ulElem.textContent = (this.name);
@@ -64,7 +65,7 @@ LocatSales.prototype.render = function () {
 function lastLine(){
   let lastLineElem = document.createElement('tr');
   lastLineElem.textContent = ('Totals');
-  body.appendChild(lastLineElem);
+  table.appendChild(lastLineElem);
 }
 
 let Seattle = new LocatSales('Seattle', 65, 23, 6.3);
