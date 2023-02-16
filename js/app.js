@@ -91,22 +91,6 @@ let Lima = new LocatSales('Lima', 16, 2, 4.6);
 
 allLocations.push(Seattle, Tokyo, Dubai, Paris, Lima);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function renderAll(){
   firstLine();
   for (let i = 0; i < allLocations.length; i++){
