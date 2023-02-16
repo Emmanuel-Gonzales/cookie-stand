@@ -6,6 +6,7 @@ function randomSale(min, max) {
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let allLocations = [];
 let table = document.querySelector('table');
+let grandTotal = 0
 
 
 
@@ -16,6 +17,7 @@ function LocatSales (name, maxCust, minCust, avgCookieSale){
   this.avgCookieSale = avgCookieSale;
   this.total = 0;
   this.cookiesSale = [];
+  this.hourlySale = [];
 }
 
 function firstLine(){
@@ -48,14 +50,12 @@ LocatSales.prototype.render = function () {
   articleElem.appendChild(ulElem);
 
   for (let i = 0; i < hours.length; i++) {
-    for (let j = 0; j < 1; j++) {
-      this.generateCookies();
-      let liElem = document.createElement('td');
-      liElem.textContent = `${this.cookiesSale} cookies`;
-      articleElem.appendChild(liElem);
-    }
+    this.generateCookies();
+    let liElem = document.createElement('td');
+    liElem.textContent = `${this.cookiesSale} cookies`;
+    articleElem.appendChild(liElem);
+    this.hourlySale.push(this.cookiesSale);
     this.total += this.cookiesSale;
-    // console.log(this.total);
   }
   let totalCon = document.createElement('td');
   totalCon.textContent =`${this.total} cookies`;
@@ -66,6 +66,21 @@ function lastLine(){
   let lastLineElem = document.createElement('tr');
   lastLineElem.textContent = ('Totals');
   table.appendChild(lastLineElem);
+
+  for(let i = 0; i < hours.length; i++){
+    let sum = 0;
+    for (let j = 0; j < allLocations.length; j++){
+      sum += allLocations[j].hourlySale[i];
+    }
+    let lastLineCell = document.createElement('td');
+    lastLineCell.textContent = `${sum} cookies`;
+    lastLineElem.appendChild(lastLineCell);
+    grandTotal += sum;
+  }
+
+  let grandTotalElem = document.createElement('td');
+  grandTotalElem.textContent = `${grandTotal} Cookies Sold Today`;
+  lastLineElem.appendChild(grandTotalElem);
 }
 
 let Seattle = new LocatSales('Seattle', 65, 23, 6.3);
@@ -75,6 +90,22 @@ let Paris = new LocatSales('Paris', 38, 20, 2.3);
 let Lima = new LocatSales('Lima', 16, 2, 4.6);
 
 allLocations.push(Seattle, Tokyo, Dubai, Paris, Lima);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function renderAll(){
   firstLine();
