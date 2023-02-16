@@ -1,11 +1,31 @@
-h1{
-  width: 150px;
-  font-size: 45px;
-  text-align: center;
-  margin: auto;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+body{
+background-color: #0378a3;
 }
 
-h2{
-  font-size: 25px;
+h1{
+  font-size: 40px;
+  color: #D4F0AA;
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+
+table{
+  background-color: #8a5d36;
+  font-size: 15px;
+  font-family: sans-serif;
+  width: fit-content;
+  color: #D4F0AA;
+}
+
+tr{
+  border: solid #D4F0AA;
+}
+
+th{
+  border: solid #D4F0AA;
+}
+
+td{
+  border: solid #D4F0AA;
+  padding: 2px;
 }
