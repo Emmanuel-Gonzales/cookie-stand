@@ -1,16 +1,101 @@
+body{
+  background-color: #0378a3;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+}
+
 h1{
-  width: 150px;
-  font-size: 45px;
-  text-align: center;
+  font-size: 40px;
+  color: #D4F0AA;
+  font-family: Helvetica, sans-serif ;
+  position: absolute;
+  top: 60px;
+}
+
+#png{
+  width: 435px;
+}
+
+nav{
+  background-color: #8a5d36;
+  font-size: 17px;
+  width: 900px;
   margin: auto;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+}
+
+ul{
+  width: 900px;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a{
+  color: #D4F0AA;
+}
+
+#first{
+  font-family: cursive;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  color: #FFFFF3
+}
+
+#family{
+  width: 375px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+#about{
+  width: 360px;
+
+}
+
+figcaption{
+  font-family: sans-serif;
+  font-size: 19px;
+  background-color: #222222;
+  color: white;
+  text-align: center;
+}
+
+#locations{
+  font-family: sans-serif;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  color: #FFFFF3;
+  width: 900px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 h2{
-  font-size: 25px;
+  font-size: 30px;
+  font-family: cursive;
 }
 
-/* #Tokyo{
-  border: solid black 10px;
-  color: blueviolet;
-  width:fit-content */
+#addy{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.merchimg{
+  border: solid black;
+}
+
+.mImg{
+  width: 327px;
+}
+
