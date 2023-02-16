@@ -14,6 +14,7 @@ table{
   font-size: 15px;
   font-family: sans-serif;
   width: fit-content;
+  margin-top: 15px;
   color: #D4F0AA;
 }
 
@@ -28,4 +29,24 @@ th{
 td{
   border: solid #D4F0AA;
   padding: 2px;
+}
+
+nav{
+  background-color: #8a5d36;
+  font-size: 17px;
+  width: 500px;
+  margin: auto;
+  display: flex;
+}
+
+ul{
+  width: 900px;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a{
+  color: #D4F0AA;
 }
