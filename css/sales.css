@@ -37,6 +37,7 @@ nav{
   width: 500px;
   margin: auto;
   display: flex;
+  border: #D4F0AA solid;
 }
 
 ul{
@@ -49,4 +50,58 @@ ul{
 
 a{
   color: #D4F0AA;
+}
+
+h2{
+  font-size: 30px;
+  font-family: cursive;
+  margin-bottom: 15px;
+  background-color: #8a5d36;
+  color: #D4F0AA;
+  border-bottom: solid #D4F0AA;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+form{
+  font-size: 15px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: fit-content;
+  margin: 25px;
+  border: solid #D4F0AA;
+  background-color: #8a5d36;
+  color: #D4F0AA;
+}
+
+#sales{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+input{
+  width: 177px;
+}
+
+button{
+    color: #D4F0AA;
+  background-color: #8a5d36;
+  width: 177px;
+  height: 30px
+
+}
+
+button:hover{
+  transform: scale(1.1);
+  background-color: #D4F0AA;
+  color: #8a5d36;
+}
+
+legend{
+  font-size: 25px;
 }
