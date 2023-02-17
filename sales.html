@@ -28,6 +28,37 @@
     <table>
 
     </table>
+
+    <form id="store-generator">
+      <h2>Add You're own Location(Generator)</h2>
+
+      <fieldset>
+        <legend>Enter Store Name</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+      </fieldset>
+
+      <fieldset>
+        <legend>Please Enter Sales Information</legend>
+
+        <label for="maxCust">
+          Enter Max Customers per day at Location
+          <input type="number"  min="0" id="maxCust" name="maxCust">
+        </label>
+
+        <label for="minCust">Enter Minimum Customers per day at Location</label>
+        <input type="number" min="0" id="minCust" name="minCust">
+
+        <label for="avgCookieSale">Please Enter average number of Cookies Bought per Customer</label>
+        <input type="number" min="0" id="avgCookieSale" name="avgCookieSale">
+      </fieldset>
+
+      <button type="submit">
+        Submit Location
+      </button>
+
+    </form>
   </main>
 
 

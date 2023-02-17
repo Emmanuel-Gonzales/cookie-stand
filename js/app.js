@@ -6,7 +6,8 @@ function randomSale(min, max) {
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let allLocations = [];
 let table = document.querySelector('table');
-let grandTotal = 0
+let myForm = document.getElementById('store-generator');
+let grandTotal = 0;
 
 
 
@@ -36,9 +37,11 @@ function firstLine(){
   timeElem.appendChild(totalElem);
 }
 
+
 LocatSales.prototype.generateCookies = function(){
   this.cookiesSale = Math.floor(randomSale(this.minCust, this.maxCust) * this.avgCookieSale);
 };
+
 
 LocatSales.prototype.render = function () {
 
@@ -62,10 +65,38 @@ LocatSales.prototype.render = function () {
   articleElem.appendChild(totalCon);
 };
 
+function handleSubmitForm(event){
+  event.preventDefault();
+  let name = event.target.name.value;
+  let maxCust = event.target.maxCust.valueAsNumber;
+  let minCust = event.target.minCust.valueAsNumber;
+  let avgCookieSale = event.target.avgCookieSale.valueAsNumber;
+
+  console.log(typeof name);
+  console.log(typeof maxCust);
+  console.log(typeof minCust);
+  console.log(typeof avgCookieSale);
+  let newStore = new LocatSales(name, maxCust, minCust, avgCookieSale);
+  allLocations.push(newStore);
+
+  let lastLineElem = document.querySelector('TFoot');
+  lastLineElem.remove();
+
+  newStore.generateCookies();
+  newStore.render();
+
+  lastLine();
+
+  myForm.reset();
+}
+
 function lastLine(){
-  let lastLineElem = document.createElement('tr');
-  lastLineElem.textContent = ('Totals');
+  let lastLineElem = document.createElement('TFoot');
   table.appendChild(lastLineElem);
+
+  let lastHeadElem = document.createElement('th');
+  lastHeadElem.textContent = ('Totals');
+  lastLineElem.appendChild(lastHeadElem);
 
   for(let i = 0; i < hours.length; i++){
     let sum = 0;
@@ -101,7 +132,7 @@ function renderAll(){
 }
 renderAll();
 
-
+myForm.addEventListener('submit', handleSubmitForm);
 
 // let Seattle = {
 //   name: 'Seattle',
